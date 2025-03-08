@@ -1,5 +1,5 @@
 import gradio as gr
-def test_function(image): #สร้างฟังก์ชันตรวจจับตรงนี้ input คือภาพที่จะตรวจจับ
+def skin_detection(image): #สร้างฟังก์ชันตรวจจับตรงนี้ input คือภาพที่จะตรวจจับ
     return 'เป็นไรอะ'
 
 examples = [('images/BacterialDermatosis.jpg', 'Bacterial Dermatosis'), ('images/FungalInfection.jpg', 'Fungal Infection'),\
@@ -48,6 +48,6 @@ with gr.Blocks(theme=theme) as demo:
             gr.Gallery(examples, height=80, label='Skin Disease Example')
             output_label = gr.Label(label="Your pet's skin disease Detection:")
             button = gr.Button("Detect")
-            button.click(test_function, inputs=image_input, outputs=output_label)
+            button.click(skin_detection, inputs=image_input, outputs=output_label)
 
 demo.launch()
